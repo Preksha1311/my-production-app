@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 
 export default function CategoryDetails({ params }: { params: { categoryId: string } }) {
-  const router = useRouter()
+//   const router = useRouter()
   // let id= params.categoryId;
 //   console.log(router.)
   return (
