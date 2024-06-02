@@ -1,14 +1,15 @@
 "use client"
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-
+import React from 'react'
 const site = "localhost:3000"
-export default function CardHoverEffectDemo() {
+const CardHoverEffectDemo = () => {
   return (
     <div className="max-w-5xl mx-auto px-8">
       <HoverEffect items={projects} />
     </div>
-  );
+  )
 }
+
 export const projects = [
   {
     title: "Stripe",
