@@ -2,24 +2,21 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
-import LogoHeader from "../landingPage/LogoHeader";
-import Image from "next/image";
 import { HiMenu, HiX } from "react-icons/hi"; // Import hamburger and close icons
+import { useRouter } from "next/navigation";
 
 interface NavbarProps {
+  username?:string,
+  login?:boolean,
   className?: string;
 }
 
 export function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
-      <Navbar className="top-2" />
+      <Navbar username={""} className="top-2" />
     </div>
   );
-}
- 
-const handlelogin = async() =>{
-
 }
 
 function Navbar({ className }: NavbarProps) {
@@ -36,6 +33,12 @@ function Navbar({ className }: NavbarProps) {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const router = useRouter();
+
+  const handleLogin = () => {
+    router.push('/login')
+  }
 
   return (
     <div className="bg-black w-full my-0">
@@ -108,7 +111,8 @@ function Navbar({ className }: NavbarProps) {
                 </div>
               </MenuItem>
             </Menu>
-            <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+
+            <button onClick={handleLogin} className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
               Login
             </button>
           </div>
@@ -161,7 +165,7 @@ function Navbar({ className }: NavbarProps) {
                 </div>
               </MenuItem>
             </Menu>
-            <button onClick={handlelogin} className="mt-4 w-full inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+            <button onClick={handleLogin} className="mt-4 w-full inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
               Login
             </button>
           </div>
