@@ -17,7 +17,8 @@ const CategoryDetails = ({ params }: { params: { categoryId: string } }) => {
   );
 }
 
-// export default CategoryDetails
+
+export default CategoryDetails
 // export default function CategoryDetails() {
 //   const router = useRouter()
 //   let id= params.categoryId;
