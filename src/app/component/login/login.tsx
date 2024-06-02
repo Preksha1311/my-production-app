@@ -32,15 +32,15 @@ export function SignupFormDemo() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/users/register', formData);
-      const token = response.data.token;
+      // const response = await axios.post('http://localhost:3000/users/register', formData);
+      // const token = response.data.token;
       const userRole = formData.role;
       // login(formData.username, token);
       setButtonText(`Hi ${formData.username}`);
       // Store the token in localStorage or sessionStorage
-      Cookies.set('token', token, { secure: true, sameSite: 'strict' });
-      localStorage.setItem('token', token);
-      localStorage.setItem('token', token);
+      // Cookies.set('token', token, { secure: true, sameSite: 'strict' });
+      // localStorage.setItem('token', token);
+      // localStorage.setItem('token', token);
 
       // Navigate based on user role
       if (userRole === 'employee') {
