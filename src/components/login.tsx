@@ -6,10 +6,10 @@ import { IconBrandGithub, IconBrandGoogle, IconBrandOnlyfans } from "@tabler/ico
 import { Input } from '@/components/ui/input';
 import { Label } from "@/components/ui/label";
 import axios from 'axios';
-import NavbarDemo from "../navbar/Navbar";
+import NavbarDemo from "./Navbar";
 import Cookies from 'js-cookie';
 // import { AuthProvider, useAuth } from "@/context/AuthContext";
-import ProtectedRoute from "../protectedRoutes";
+import ProtectedRoute from "../providers/protectedRoutes";
 
 export function SignupFormDemo() {
   const [formData, setFormData] = useState({
@@ -64,7 +64,7 @@ export function SignupFormDemo() {
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
         Already have an account? Login Here
       </p>
-      
+
       <form className="my-8" onSubmit={handleSubmit}>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="username">Username</Label>
@@ -149,9 +149,9 @@ const LabelInputContainer = ({
 }) => {
   return (
     <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      
+
       {children}
-    
+
     </div>
   );
 };

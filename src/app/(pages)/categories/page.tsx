@@ -48,3 +48,4 @@ export const projects = [
     link: `http://${site}/categories/glassware`,
   },
 ];
+ export default CardHoverEffectDemo
